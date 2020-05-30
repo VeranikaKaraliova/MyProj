@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My test app!</title>
+    <style>
+        #c {color: #724428; font-weight:bold; text-align: center}
+        #h1 { color:#724428; text-align: center}
+        
+        .blok1 {color:#724428;
+                text-align: center;
+                font-style:oblique;
+                position: relative;
+                left: 110px;
+                top: -550px;
+                font-size: 27px;}
+        .blok2 {text-align: center;
+                position: relative;
+                top: -550px;
+                left: 110px;
+                font-style: oblique;
+                color: #54959b;}
+        .blok3 {text-align: center;
+                position: relative;
+                left: -400px;
+                top: 50px;}
+        body {background-color:#efeae6;}
+        
+    </style>
+</head>
+<body>
+    <div class="blok3"> <img src="https://i.pinimg.com/564x/db/1e/33/db1e33e634056cb912537dcc64ebeddb.jpg" width="380"></div>
+    <div class='blok1'>
+        <h1 id='h1' >Будь</h1>
+        <p >Не будь как сахар, будь как чай -<br>
+        Не растворяйся, растворяй.<br>
+        Не растеряй свои мечты,<br>
+        Не будь как кто-то, будь как ты.<br></p>
+        <p id='c' >© Артём Скобёлкин</p></div>
+    <div class="blok2">
+        <h1>Карточка посетителя странички</h1>
+        <p>Фамилия <input type="text" name="lastame" placeholder="Фамилия"></p>
+        <p>Имя <input type="text" name="firstname" placeholder="Имя"></p>
+        <p> Ваша страна <select name='country'>
+            <option disabled selected value='none'> Укажите страну </option>
+            <option value='BLR'> Беларусь </option>
+            <option value='LIE'> Литва </option>
+            <option value='POL'> Польша </option>
+            <option value='RUS'> Россия </option>
+            <option value='UKR'> Украина </option>
+            </select> </p>
+        <p> Вам понравился стих? <input type='radio' name='review' value='да'> да <input type='radio' name='review' value='нет'> нет </p>
+    </div>
+</body>
+</html>
