@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My parsing</title>
+    <style>
+        #id1 {color: snow;
+            text-align: center; 
+            font-weight:oblique; 
+            background-color:#078585}
+        table {text-align: center;
+            background-color:rgb(203, 241, 236)}
+        body {background-color: rgb(250, 255, 255);}
+        div {position: relative;
+            left: 250px}
+    </style>
+</head>
+<body>
+    <div>
+    <table border="1"  width="900">
+        <tr id='id1'>
+            <td>№n/n</td><td>ip</td><td>Браузер</td><td>Полный запрос</td><td>Создано</td><td>Изменено</td>
+        </tr>
+        {% for pars in par %}
+            <tr>
+                <td>{{pars.id}}</td>
+                <td>{{pars.ip}}</td>
+                <td>{{pars.name}}</td>
+                <td>{{pars.description}}</td>
+                <td>{{pars.created}}</td>
+                <td>{{pars.updated}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+</body>
+</html>
