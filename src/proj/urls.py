@@ -28,4 +28,4 @@ urlpatterns = [
     path('form-genre/<int:pk>', Test_gen.as_view()),
     path('create-genre/', CreateGenre.as_view()),
     path('ok/', all_list)
- 
+]
