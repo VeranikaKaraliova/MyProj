@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id1 {background-color:#faffcd}
+        h1 {text-align: center;
+            color:rgb(16, 37, 75)}
+        h3 {text-align: center;}
+        
+        table {text-align: center;}
+
+        div {position: relative;
+            left: 420px}
+    </style>
+</head>
+<body>
+    <h1>Форма успешно отправлена!</h1>
+    <h3>Перед Вами полный список доступных жанров</h3>
+    <div>
+        <table border="1"  width="500">
+            <tr id="id1">
+                <th>Название жанра</th><th>Описание</th><th>Создано</th><th>Изменено</th>
+            </tr>
+            {% for a in genre %}
+                <tr>
+                    <td>{{a.name}}</td>
+                    <td>{{a.description}}</td>
+                    <td>{{a.created}}</td>
+                    <td>{{a.updated}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+</body>
+</html>
