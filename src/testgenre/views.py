@@ -29,21 +29,3 @@ def all_list(request):
 
 
 
-
-# def test_gen(request, pk):
-#    if request.method == 'GET':
-#        pass
-#    else:
-#        pass
-#
-#    post_data = request.POST
-#    name = request.POST.get('name')
-#    description = request.POST.get('description')
-#    obj = Genre.objects.get(pk = pk)
-#
-    # print(name, description) #метод гет
-
-    #obj = Genre(name = name, description = description)
-    #obj.save()
-#    context = {'name': obj.name, 'description': obj.description}
-#    return render(request, template_name='testgenre/test.html', context= context)
