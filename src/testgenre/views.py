@@ -22,7 +22,8 @@ class ListGenre(ListView):
     model = Genre
     template_name='testgenre/list-genre.html'
     #queryset = Genre.objects.all()
-    context_object_name = 'genres'
+    success_url = '/list-genre/'
+    #context_object_name = 'genres'
     
 class DeleteGenre(DeleteView):
     model = Genre
