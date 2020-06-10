@@ -21,13 +21,12 @@ class UpdateGenre(UpdateView):
 class ListGenre(ListView):
     model = Genre
     template_name='testgenre/list-genre.html'
-    #queryset = Genre.objects.all()
+    queryset = Genre.objects.all()
     success_url = '/list-genre/'
-    #context_object_name = 'genres'
+    context_object_name = 'genres'
     
 class DeleteGenre(DeleteView):
     model = Genre
-    
     template_name = 'testgenre/delete-genre.html'
     success_url = '/list-genre/'
 
