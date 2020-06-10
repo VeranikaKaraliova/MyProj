@@ -16,15 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from testapp.views import test
-from test_bd.views import bd
-from test_bd.views import bdcr
+#from test_bd.views import bd
+#from test_bd.views import bdcr
 from testgenre.views import CreateGenre, UpdateGenre, ListGenre, DeleteGenre
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', test),
-    path('bd-create/', bdcr),
-    path('bd/', bd),
+    #path('test/', test),
+    #path('bd-create/', bdcr),
+    #path('bd/', bd),
     #path('form-genre/<int:pk>', Test_gen.as_view()),
     path('create-genre/', CreateGenre.as_view()),
     #path('ok/', all_list, name='all-list'),
