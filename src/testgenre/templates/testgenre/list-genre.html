@@ -23,14 +23,14 @@
             </tr>
             </thead>
             <tbody>
-            {% for a in genres %}
+            {% for obg in object_list %}
                 <tr>
-                    <td>{{a.name}}</td>
-                    <td>{{a.description}}</td>
-                    <td>{{a.created}}</td>
-                    <td>{{a.updated}}</td>
-                    <td><a href="/update-genre/{{a.pk}}">Изменить</a><br>
-                        <a href="/delete-genre/{{a.pk}}">Удалить</a>
+                    <td>{{obj.name}}</td>
+                    <td>{{obj.description}}</td>
+                    <td>{{obj.created}}</td>
+                    <td>{{obj.updated}}</td>
+                    <td><a href="/update-genre/{{obj.pk}}">Изменить</a><br>
+                        <a href="/delete-genre/{{obj.pk}}">Удалить</a>
                     </td>
                 </tr>
             {% endfor %}
