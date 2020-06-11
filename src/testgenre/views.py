@@ -9,7 +9,7 @@ from django.http import HttpResponse
 class CreateGenre(CreateView):
     model = Genre
     form_class = CreateGenreForm
-    template_name = 'testgenre/create_genre.html'
+    template_name = 'testgenre/create-genre.html'
     success_url = '/list-genre/'
 
 class UpdateGenre(UpdateView):
