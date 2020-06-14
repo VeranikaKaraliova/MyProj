@@ -2,6 +2,8 @@
 
 {%block title%} list genres {% endblock title%}
 {%block body%}
+<div>
+    <br>
     <h2>Перед Вами полный список доступных жанров</h3>
         <a href="{% url 'genres:create' %}" class="btn btn-success">Добавить новый жанр</a>
         <table   width="850" class="table">
@@ -22,4 +24,5 @@
                 </tr>
             {% endfor %}  
         </table>
+</div>
 {%endblock body%} 
