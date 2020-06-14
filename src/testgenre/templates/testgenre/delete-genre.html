@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Вы действительно хотите удалить жанр {{genres.name}}</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block title%} list genres {% endblock title%}
+{%block body%}
+
+    <div class="starter-template">
+    <h3>Вы действительно хотите удалить жанр <br>"{{genres.name}}"?</h3>
     <form action="" method="post">
         {% csrf_token %}
        
-        <input type="submit" value="YES">
+        <input type="submit" class="btn btn-danger" value="Да!">
     </form>
-</body>
-</html>
+    </div>
+{%endblock body%} 
+

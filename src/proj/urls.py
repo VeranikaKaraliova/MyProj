@@ -14,21 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from testapp.views import test
-#from test_bd.views import bd
-#from test_bd.views import bdcr
 from testgenre.views import CreateGenre, UpdateGenre, ListGenre, DeleteGenre
+
+#from testgenre import urls as testgenre_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('test/', test),
-    #path('bd-create/', bdcr),
-    #path('bd/', bd),
-    #path('form-genre/<int:pk>', Test_gen.as_view()),
-    path('create-genre/', CreateGenre.as_view()),
-    #path('ok/', all_list, name='all-list'),
-    path('update-genre/<int:pk>', UpdateGenre.as_view(), name='update-genre'),
-    path('list-genre/', ListGenre.as_view()),
-    path('delete-genre/<int:pk>', DeleteGenre.as_view()),
+
+    path('create-genre/', CreateGenre.as_view(), name='create-genre'),
+    #path('update-genre/<int:pk>', UpdateGenre.as_view(), name='update'),
+    #path('list-genre/', ListGenre.as_view(), name='list'),
+    #path('delete-genre/<int:pk>', DeleteGenre.as_view(), name='delete'),
+    path('testgenre/', include('testgenre.urls', namespace='genres')),
 ]
