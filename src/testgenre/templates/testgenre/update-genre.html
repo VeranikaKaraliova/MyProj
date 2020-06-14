@@ -4,9 +4,13 @@
 
 {%block title%} list genres {% endblock title%}
 {%block body%}
+    <a href="{% url 'genres:list' %}" >Вернуться к списку жанров</a>
+    <br>
+    <br>
     <form action="" method="post">
         {% csrf_token %}
         {{form|crispy}}
         <input type="submit" class="btn btn-primary" value="Сохранить">
     </form>
+    
 {%endblock body%} 

@@ -4,7 +4,6 @@
 
 {%block title%} list genres {% endblock title%}
 {%block body%}
-
     <div class="starter-template">
     <h3>Вы действительно хотите удалить жанр <br>"{{genres.name}}?</h3>
     <form action="" method="post">
@@ -12,6 +11,8 @@
        
         <input type="submit" class="btn btn-danger" value="Да!">
     </form>
+    <br>
+    <a href="{% url 'genres:list' %}" >Вернуться к списку жанров</a>
     </div>
 {%endblock body%} 
 
