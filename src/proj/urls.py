@@ -28,4 +28,6 @@ urlpatterns = [
     #path('list-genre/', ListGenre.as_view(), name='list'),
     #path('delete-genre/<int:pk>', DeleteGenre.as_view(), name='delete'),
     path('testgenre/', include('testgenre.urls', namespace='genres')),
+    path('authors/', include('authors.urls', namespace='authors')),
+
 ]

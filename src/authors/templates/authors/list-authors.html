@@ -1,0 +1,26 @@
+{% extends 'templates/base.html' %}
+
+{%block title%} list authors {% endblock title%}
+{%block body%}
+<div>
+    
+    <h2>Полный список авторов</h3>
+        <a href="{% url 'authors:create' %}" class="btn btn-success">Добавить нового автора</a>
+        <table   width="850" class="table">
+            <thead class="thead-dark">
+            <tr id="id1">
+                <th>ФИО автора</th><th>Биография</th><th>Изменить/Удалить</th>
+            </tr>
+            </thead>
+            {% for obj in authors %}
+                <tr>
+                    <td>{{obj.name}}</td>
+                    <td>{{obj.description}}</td>
+                    <td><a href="{% url 'authors:update' obj.pk %}">Изменить</a><br>
+                        <a href="{% url 'authors:delete' obj.pk %}">Удалить</a>
+                    </td>
+                </tr>
+            {% endfor %}  
+        </table>
+</div>
+{%endblock body%} 

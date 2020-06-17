@@ -1,0 +1,13 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block title%} create authors {% endblock title%}
+{%block body%}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" class="btn btn-success" value="Добавить">
+    </form>
+{%endblock body%} 
