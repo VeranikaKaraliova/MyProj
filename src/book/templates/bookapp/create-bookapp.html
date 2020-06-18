@@ -2,9 +2,9 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{%block title%} create publisher {% endblock title%}
+{%block title%} create book {% endblock title%}
 {%block body%}
-    <a href="{% url 'publisher:list' %}" >Вернуться к списку издательств</a>
+    <a href="{% url 'bookapp:list' %}" >Вернуться к списку издательств</a>
     <form action="" method="post" enctype = "multipart/form-data">
         {% csrf_token %}
         {{form|crispy}}

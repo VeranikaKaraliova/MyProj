@@ -1,0 +1,16 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block title%} update book {% endblock title%}
+{%block body%}
+    <a href="{% url 'bookapp:list' %}" >Вернуться к списку книг</a>
+    <br>
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" class="btn btn-primary" value="Сохранить">
+    </form>
+    
+{%endblock body%} 

@@ -31,4 +31,5 @@ urlpatterns = [
     path('testgenre/', include('testgenre.urls', namespace='genres')),
     path('authors/', include('authors.urls', namespace='authors')),
     path('publisher/', include('publisher.urls', namespace='publisher')),
+    path('book/', include('book.urls', namespace='bookapp')),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

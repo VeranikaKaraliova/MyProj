@@ -1,0 +1,30 @@
+{% extends 'templates/base.html' %}
+
+{%block title%} list publisher {% endblock title%}
+{%block body%}
+<div>
+    
+    <h2>Полный список книг</h3>
+        <a href="{% url 'bookapp:create' %}" class="btn btn-success">Добавить новую книгу</a>
+        <table   width="850" class="table">
+            <thead class="thead-dark">
+            <tr id="id1">
+                <th>Название книги</th><th>Обложка книги</th><th>Автор</th><th>Жанр</th><th>Издательство</th><th>Описание</th><th>Изменить/Удалить</th>
+            </tr>
+            </thead>
+            {% for obj in bookapp %}
+                <tr>
+                    <td>{{obj.name}}</td>
+                    <td><img src="{{obj.image.url}}" width="100" alt=""></td>
+                    <td>{{obj.authors}}</td>
+                    <td>{{obj.genre}}</td>
+                    <td>{{obj.publisher}}</td>
+                    <td>{{obj.description}}</td>
+                    <td><a href="{% url 'bookapp:update' obj.pk %}">Изменить</a><br>
+                        <a href="{% url 'bookapp:delete' obj.pk %}">Удалить</a>
+                    </td>
+                </tr>
+            {% endfor %}  
+        </table>
+</div>
+{%endblock body%} 
