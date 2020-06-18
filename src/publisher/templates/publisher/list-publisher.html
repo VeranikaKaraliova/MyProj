@@ -14,7 +14,7 @@
             </thead>
             {% for obj in publisher %}
                 <tr>
-                    <td>{{obj.image}}</td>
+                    <td><img src="{{obj.image.url}}" width="100" alt=""></td>
                     <td>{{obj.name}}</td>
                     <td>{{obj.description}}</td>
                     <td><a href="{% url 'publisher:update' obj.pk %}">Изменить</a><br>
