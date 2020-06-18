@@ -12,7 +12,7 @@ class Publisher(models.Model):
     )
     image = models.ImageField(
         verbose_name='Логотип издательства',
-        upload_to='media/publisher-pics',
+        upload_to='publisher-pics',
         null=True,
         blank=True
     )
