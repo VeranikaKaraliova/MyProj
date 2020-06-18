@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'testapp',
     'testgenre',
     'authors',
+    'publisher',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '//home/VeranikaKaraliova/static/'
 
-MEADIA_URL = '/media/'
-MEADIA_ROOT = '/home/VeranikaKaraliova/media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/VeranikaKaraliova/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
