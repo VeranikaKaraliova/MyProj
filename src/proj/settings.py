@@ -134,3 +134,4 @@ MEDIA_ROOT = '/home/VeranikaKaraliova/shop/MyProj/src/media/publisher-pics/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+ 
