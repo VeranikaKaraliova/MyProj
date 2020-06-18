@@ -1,0 +1,27 @@
+{% extends 'templates/base.html' %}
+
+{%block title%} list publisher {% endblock title%}
+{%block body%}
+<div>
+    
+    <h2>Полный список издательств</h3>
+        <a href="{% url 'publisher:create' %}" class="btn btn-success">Добавить новое издательство</a>
+        <table   width="850" class="table">
+            <thead class="thead-dark">
+            <tr id="id1">
+                <th>Логотип</th><th>Название издательств</th><th>Аннотация</th><th>Изменить/Удалить</th>
+            </tr>
+            </thead>
+            {% for obj in publisher %}
+                <tr>
+                    <td>{{obj.image}}</td>
+                    <td>{{obj.name}}</td>
+                    <td>{{obj.description}}</td>
+                    <td><a href="{% url 'publisher:update' obj.pk %}">Изменить</a><br>
+                        <a href="{% url 'publisher:delete' obj.pk %}">Удалить</a>
+                    </td>
+                </tr>
+            {% endfor %}  
+        </table>
+</div>
+{%endblock body%} 
