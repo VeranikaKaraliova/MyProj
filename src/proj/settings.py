@@ -81,8 +81,8 @@ LOGOUT_URL = '/logout/'
 
 
 DIRS = (
-    os.path.join(BASE_DIR, 'src/template/registration'),
-    os.path.join(BASE_DIR, 'src/template/')
+    os.path.join(BASE_DIR, 'src/templates/registration'),
+    os.path.join(BASE_DIR, 'src/templates/')
 )
 #
 
