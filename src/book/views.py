@@ -1,6 +1,6 @@
 
 from django.views.generic.base import TemplateView
-from django.views.generic import CreateView, UpdateView, ListView, DeleteView
+from django.views.generic import CreateView, UpdateView, ListView, DeleteView, DetailView
 from django.shortcuts import render
 from . models import BookApp
 from . forms import CreateBookAppForm
@@ -30,6 +30,11 @@ class DeleteBookApp(DeleteView):
     model = BookApp
     template_name = 'bookapp/delete-bookapp.html'
     success_url = reverse_lazy('bookapp:list')
+    context_object_name = 'bookapp'
+
+class DetailBookApp(DetailView):
+    model = BookApp
+    template_name = 'bookapp/detail-bookapp.html'
     context_object_name = 'bookapp'
 
 #class HomePage()

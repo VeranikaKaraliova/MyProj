@@ -5,11 +5,13 @@
 <div>
     
     <h2>Перед Вами полный список доступных жанров</h3>
-        <a href="{% url 'genres:create' %}" class="btn btn-success">Добавить новый жанр</a>
+        {% if user.is_superuser or user.is_staff %} 
+        <a href="{% url 'genres:create' %}" class="btn btn-success">Добавить новый жанр</a>{% endif %}
         <table   width="850" class="table">
             <thead class="thead-dark">
             <tr id="id1">
-                <th>Название жанра</th><th>Описание</th><th>Создано</th><th>Изменено</th><th>Изменить/Удалить</th>
+                <th>Название жанра</th><th>Описание</th><th>Создано</th><th>Изменено</th>{% if user.is_superuser %} 
+                <th>Изменить/Удалить</th> {% elif user.is_staff %} <th>Изменить</th>{% endif %}
             </tr>
             </thead>
             {% for obj in genres %}
@@ -18,8 +20,12 @@
                     <td>{{obj.description}}</td>
                     <td>{{obj.created}}</td>
                     <td>{{obj.updated}}</td>
+                    {% if user.is_superuser %}
                     <td><a href="{% url 'genres:update' obj.pk %}">Изменить</a><br>
                         <a href="{% url 'genres:delete' obj.pk %}">Удалить</a>
+                    {% elif user.is_staff %}
+                    <td><a href="{% url 'genres:update' obj.pk %}">Изменить</a><br>
+                    {% endif %}
                     </td>
                 </tr>
             {% endfor %}  

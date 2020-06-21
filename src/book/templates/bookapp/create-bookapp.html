@@ -4,7 +4,7 @@
 
 {%block title%} create book {% endblock title%}
 {%block body%}
-    <a href="{% url 'bookapp:list' %}" >Вернуться к списку издательств</a>
+    <a href="{% url 'bookapp:list' %}" >Вернуться к списку книг</a>
     <form action="" method="post" enctype = "multipart/form-data">
         {% csrf_token %}
         {{form|crispy}}

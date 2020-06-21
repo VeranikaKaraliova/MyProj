@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'testgenre',
     'authors',
     'publisher',
-    'book'
+    'book',
+    'profiles',
 ]
 
 MIDDLEWARE = [
@@ -135,4 +136,5 @@ MEDIA_ROOT = '/home/VeranikaKaraliova/shop/MyProj/src/media/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
- 
+
+LOGIN_REDIRECT_URL = '/book/home-page'
