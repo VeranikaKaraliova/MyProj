@@ -74,6 +74,18 @@ TEMPLATES = [
     },
 ]
 
+#
+LOGIN_REDIRECT_URL = '/login/'
+
+LOGOUT_URL = '/logout/'
+
+
+DIRS = (
+    os.path.join(BASE_DIR, 'src/template/registration'),
+    os.path.join(BASE_DIR, 'src/template/')
+)
+#
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
