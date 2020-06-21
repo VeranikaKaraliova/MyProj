@@ -129,7 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '//home/VeranikaKaraliova/static/'
+STATIC_ROOT = '/home/VeranikaKaraliova/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/home/VeranikaKaraliova/shop/MyProj/src/media/'
