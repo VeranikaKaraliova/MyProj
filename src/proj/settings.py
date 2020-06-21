@@ -150,3 +150,6 @@ MEDIA_ROOT = '/home/VeranikaKaraliova/shop/MyProj/src/media/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/book/home-page'
+
+LOGIN_URL = 'login' 
+LOGOUT_URL = 'logout'
