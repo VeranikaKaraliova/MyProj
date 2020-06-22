@@ -32,6 +32,7 @@ urlpatterns = [
     path('authors/', include('authors.urls', namespace='authors')),
     path('publisher/', include('publisher.urls', namespace='publisher')),
     path('book/', include('book.urls', namespace='bookapp')),
+    path('profiles/', include('profiles.urls', namespace='profiles')),
     path('templates/', include('django.contrib.auth.urls')), # для авторизации 
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 

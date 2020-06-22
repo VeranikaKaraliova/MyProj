@@ -11,11 +11,11 @@ class Profiles(models.Model):
         blank=True
     )
     image = models.ImageField(
-        verbose_name='Логотип издательства',
+        verbose_name='Фото пользователя',
         upload_to='publisher-pics',
         null=True,
         blank=True
     )
     
     def __str__(self):
-        return str(self.pk)
+        return self.user
