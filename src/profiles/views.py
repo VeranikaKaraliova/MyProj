@@ -6,4 +6,4 @@ from django.urls import reverse_lazy
 
 
 class ProfilesLogin(LoginView):
-    template_name = 'registration/login.html'
+    template_name = 'login.html'
