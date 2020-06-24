@@ -38,6 +38,6 @@ urlpatterns = [
     path('logout/', MyLogout.as_view(), name='logout'),
     path('change-password/', MyPasswordChange.as_view(), name='change-password'),
     path('reset-password/', MyPasswordReset.as_view(), name='reset-password'), 
-    path('templates/', include('django.contrib.auth.urls')), # для авторизации 
+    #path('templates/', include('django.contrib.auth.urls')), # для авторизации 
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
