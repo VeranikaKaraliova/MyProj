@@ -1,4 +1,4 @@
-{% extends 'templates/base.html' %}
+{% extends 'templates/base_log.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -18,7 +18,7 @@
     {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
+<form method="post" action="{% url 'profiles:login' %}">
 {% csrf_token %}
 <table>
 <tr>
@@ -35,6 +35,6 @@
 <input type="hidden" name="next" value="{{ next }}">
 </form>
 
-<!--{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'profiles:password_reset' %}">Lost password?</a></p>
 {% endblock body %}
