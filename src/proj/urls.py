@@ -19,6 +19,7 @@ from testapp.views import test
 from testgenre.views import CreateGenre, UpdateGenre, ListGenre, DeleteGenre
 from django.conf import settings
 from django.conf.urls.static import static
+from profiles.auth import MyLogin, MyPasswordChange, MyLogout, MyPasswordReset
 
 #from testgenre import urls as testgenre_urls
 
@@ -33,6 +34,10 @@ urlpatterns = [
     path('publisher/', include('publisher.urls', namespace='publisher')),
     path('book/', include('book.urls', namespace='bookapp')),
     path('profiles/', include('profiles.urls', namespace='profiles')),
+    path('login/', MyLogin.as_view(), name='login'),
+    path('logout/', MyLogout.as_view(), name='logout'),
+    path('change-password/', MyPasswordChange.as_view(), name='change-password'),
+    path('reset-password/', MyPasswordReset.as_view(), name='reset-password'), 
     path('templates/', include('django.contrib.auth.urls')), # для авторизации 
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 

@@ -5,5 +5,3 @@ from . models import Profiles
 from django.urls import reverse_lazy
 
 
-class ProfilesLogin(LoginView):
-    template_name = 'login.html'
