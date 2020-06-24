@@ -7,11 +7,11 @@ class MyLogin(LoginView):
 class MyLogout(LogoutView):
     template_name = 'registration/logout.html'
 
-class MyPasswordChange(PasswordChangeView):
-    template_name ='registration/change-password.html'
+#class MyPasswordChange(PasswordChangeView):
+#    template_name ='registration/change-password.html'
 
-class MyPasswordReset(PasswordResetView):
-    template_name ='registration/password_reset_form.html'
+#class MyPasswordReset(PasswordResetView):
+#    template_name ='registration/password_reset_form.html'
 
-class MyPasswordResetDone(PasswordResetDoneView):
-    template_name='registration/password_reset_done.html'
+#class MyPasswordResetDone(PasswordResetDoneView):
+#    template_name='registration/password_reset_done.html'

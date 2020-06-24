@@ -142,4 +142,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = '/book/home-page'
 
 LOGIN_URL = reverse_lazy('login') 
-LOGOUT_URL = 'logout'
+LOGOUT_URL = reverse_lazy('logout')

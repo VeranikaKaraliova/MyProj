@@ -1,12 +1,12 @@
 {% extends 'templates/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
-{%block title%} Вsход {% endblock title%}
+{%block title%} list genres {% endblock title%}
 
 {% block body %}
-<div class="starter-template">
-    <p>Вы вышли из системы!</p>  
+<p>Logged out!</p>  
 
-    <a href="{% url 'login'%}">Нажмите здесь, чтобы снова войти в систему.</a>
-</div>
-{%endblock body%}
+<a href="{% url 'login'%}">Click here to login again.</a>
+
+{% endblock body %}
