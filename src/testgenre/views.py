@@ -25,7 +25,8 @@ class ListGenre(ListView):
     queryset = Genre.objects.all()
     success_url = reverse_lazy('genres:list')
     context_object_name = 'genres'
-    
+    paginate_by = 5
+
 class DeleteGenre(DeleteView):
     model = Genre
     template_name = 'testgenre/delete-genre.html'
