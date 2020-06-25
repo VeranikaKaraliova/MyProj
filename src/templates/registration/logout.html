@@ -2,11 +2,11 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{%block title%} list genres {% endblock title%}
+{%block title%} Выход из учетной записи {% endblock title%}
 
 {% block body %}
-<p>Logged out!</p>  
+<p>Вы вышли из системы!</p>  
 
-<a href="{% url 'profiles:login'%}">Click here to login again.</a>
+<a href="{% url 'profiles:login'%}">Нажмите здесь, чтобы снова войти в систему.</a>
 
 {% endblock body %}

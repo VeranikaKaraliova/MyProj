@@ -139,7 +139,7 @@ MEDIA_ROOT = '/home/VeranikaKaraliova/shop/MyProj/src/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-#LOGIN_REDIRECT_URL = '/book/home-page'
+LOGIN_REDIRECT_URL = '/book/home-page'
 
 LOGIN_URL = reverse_lazy('profiles:login') 
 LOGOUT_URL = reverse_lazy('profiles:logout')
