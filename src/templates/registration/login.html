@@ -14,7 +14,8 @@
     <p>Ваша учетная запись не имеет доступа к этой странице. Чтобы продолжить, 
         пожалуйста, войдите в систему с учетной записью, которая имеет доступ.</p>
     {% else %}
-    <p>Пожалуйста, введите логин и пароль:</p>
+    <h4>Пожалуйста, введите логин и пароль:</h4>
+    <br>
     {% endif %}
 {% endif %}
 <div id="id1">
@@ -31,11 +32,16 @@
 </tr>
 </table>
 </div>
+<br>
 <input type="submit" class="btn btn-info" value="Войти">
 <input type="hidden" name="next" value="{{ next }}">
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
 <p><a href="{% url 'profiles:password_reset' %}">Забыли пароль?</a></p>
+<p><a href="{% url 'profiles:register' %}">Зарегестрироваться</a></p>
+
+
+
 </div>
 {% endblock body %}

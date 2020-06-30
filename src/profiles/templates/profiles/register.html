@@ -1,0 +1,21 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block title%} Profile {% endblock title%}
+{%block body%}
+    <h4>Для регистрации на сайте необходимо заполнить следующие поля:</h4>
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <!--<label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="id_email" required>-->
+        
+        <input type="submit" class="btn btn-info" value="Сохранить">
+    <br>
+    </form>
+    <br>
+
+    
+{%endblock body%} 

@@ -12,7 +12,8 @@ class CreateBookApp(CreateView):
     form_class = CreateBookAppForm   
     template_name = 'bookapp/create-bookapp.html'
     success_url = reverse_lazy('bookapp:list')
-
+    
+    
 class UpdateBookApp(UpdateView):
     model = BookApp
     form_class = CreateBookAppForm
@@ -25,8 +26,8 @@ class ListBookApp(ListView):
     queryset = BookApp.objects.all()
     success_url = reverse_lazy('bookapp:list')
     context_object_name = 'bookapp'
-    paginate_by = 5
     
+
 class DeleteBookApp(DeleteView):
     model = BookApp
     template_name = 'bookapp/delete-bookapp.html'
@@ -39,9 +40,14 @@ class DetailBookApp(DetailView):
     context_object_name = 'bookapp'
 
 #class HomePage()
-class HomePage(TemplateView):
+class HomePage(ListView):
+    model = BookApp
+    #queryset = BookApp.objects.get(pk =0)
+    context_object_name = 'bookapp'
     template_name = "bookapp/home-page.html"
+    success_url = reverse_lazy('bookapp:home-page')
+    paginate_by = 5
     #def get_context_data(self, **kwargs):
     #    context = super().get_context_data(**kwargs)
-    #    context['list-_ook'] = BookApp.objects.all()
+    #    context['book'] = BookApp.obgects.all()
     #    return context

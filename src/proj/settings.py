@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-en'
 
 TIME_ZONE = 'UTC'
 
@@ -134,8 +134,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/home/VeranikaKaraliova/shop/MyProj/src/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/VeranikaKaraliova/shop/MyProj/src/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = '/home/VeranikaKaraliova/shop/MyProj/src/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
