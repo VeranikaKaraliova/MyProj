@@ -38,5 +38,5 @@ urlpatterns = [
     #path('logout/', MyLogout.as_view(), name='logout'),
 
     #path('profiles/', include('django.contrib.auth.urls')), # для авторизации 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
