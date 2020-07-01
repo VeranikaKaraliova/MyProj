@@ -12,7 +12,7 @@ class Profiles(models.Model):
     )
     image = models.ImageField(
         verbose_name='Фото пользователя',
-        upload_to='publisher-pics',
+        upload_to='profiles-pics',
         null=True,
         blank=True
     )
