@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'publisher',
     'book',
     'profiles',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,5 @@ LOGIN_REDIRECT_URL = '/book/home-page'
 
 LOGIN_URL = reverse_lazy('profiles:login') 
 LOGOUT_URL = reverse_lazy('profiles:logout')
+
+CART_SESSION_ID = 'cart'

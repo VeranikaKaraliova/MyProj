@@ -26,6 +26,10 @@ class ListBookApp(ListView):
     queryset = BookApp.objects.all()
     success_url = reverse_lazy('bookapp:list')
     context_object_name = 'bookapp'
+    def get_context_data(self, **kwargs): #для тренировки и примера
+        key1 = self.request.GET.get('key1')
+        print(key1)
+        return super().get_context_data(**kwargs)
     
 
 class DeleteBookApp(DeleteView):
