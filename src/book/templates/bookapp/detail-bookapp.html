@@ -2,18 +2,27 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{%block title%} deleete book {% endblock title%}
+{%block title%} detail book {% endblock title%}
 {%block body%}
-    <div class="starter-template">
-    <h3>{{bookapp.name}}</h3><br>
-    <img src="{{bookapp.image.url}}" width="200" alt=""><br>
+    <div class="bookimg">
+    <img src="{{bookapp.image.url}}" width="320" height="470" alt=""><br>
+    </div>
+    <div class="booktxt">
+    <table width="700">
+    <h2>{{bookapp.name}}</h2><hr>
+    <tr><td>
     Автор: {{bookapp.authors}}<br>
     Жанр: {{bookapp.genre}}<br>
     Издательство: {{bookapp.publisher}}<br>
+    Год издания: {{bookapp.year}}
     Описание: {{bookapp.description}}<br>
     Цена: {{bookapp.price}}<br>
     Количество книг на складе: {{bookapp.stock}}<br>
     <br>
-    <a href="{% url 'bookapp:list' %}" >Вернуться к списку книг</a>
-    </div>
+    <a href="{% url 'cart:add' %}?bookapp_pk={{bookapp.pk}}" class="btn btn-info">Добавить в корзину</a> 
+    <br><br>
+    <a href="{% url 'bookapp:list' %}" >Вернуться к списку книг</a></td></tr></table></div>
+    
 {%endblock body%} 
+
+<!--<img src="https://etazhlarry.by/wp-content/uploads/2016/08/расписание2-600x900.jpg" width="600" height="900" alt="Расписание" style="transform: matrix(1.005, 0, 0, 1.005, 0, 0);">-->

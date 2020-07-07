@@ -28,6 +28,10 @@ class BookApp(models.Model):
         Publisher, on_delete=models.PROTECT, 
         verbose_name='Издательство',
     )
+    year = models.IntegerField(
+        verbose_name='Год издания',
+        max_length=4
+    )
     description = models.TextField(
         verbose_name='Описание книги',
         null=True,

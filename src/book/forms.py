@@ -10,6 +10,7 @@ class CreateBookAppForm(forms.ModelForm):
             'genre',
             'authors',
             'publisher',
+            'year',
             'description',
             'price',
             'slug',
