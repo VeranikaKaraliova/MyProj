@@ -18,8 +18,8 @@ class AddBookInCart(UpdateView):
         #self.kwargs.get('vas')
         cart, create = models.Cart.objects.get_or_create(
             pk = int(cart_pk),
-            user = user,
-            defaults={}
+            
+            defaults={'user' : user,}
         )
         if create:
             self.request.session['cart_pk'] = cart.pk

@@ -14,7 +14,7 @@
                 <th>Название книги</th><th>Обложка книги</th><th>Автор</th><th>Жанр</th><th>Издательство</th>
                 <th>Год издания</th><th>Цена</th><th>Доспупное количество</th>
                 {% if user.is_superuser %} 
-                <th>Изменить/Удалить</th> {% elif user.is_staff %} <th>Изменить</th>{% else %}<th>Добавить в корзину</th>{% endif %}
+                <th>Изменить/Удалить</th> {% elif user.is_staff %} <th>Изменить</th>{% endif %}<th>Добавить в корзину</th>
             </tr>
             </thead>
             {% for obj in bookapp %}

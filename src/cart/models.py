@@ -8,7 +8,9 @@ class Cart(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='carts'
+        related_name='carts',
+        blank = True,
+        null = True
     )
 
     def __str__(self):
