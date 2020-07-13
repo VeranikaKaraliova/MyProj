@@ -19,14 +19,17 @@ class BookApp(models.Model):
     genre = models.ForeignKey(
         Genre, on_delete=models.PROTECT, 
         verbose_name='Жанр книги',
+        related_name='all_book'
     )
     authors = models.ForeignKey(
         Authors, on_delete=models.PROTECT,
         verbose_name='Автор книги',
+        related_name='all_book'
     )
     publisher = models.ForeignKey(
         Publisher, on_delete=models.PROTECT, 
         verbose_name='Издательство',
+        related_name='all_book'
     )
     year = models.IntegerField(
         verbose_name='Год издания',

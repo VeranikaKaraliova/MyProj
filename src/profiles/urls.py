@@ -13,4 +13,5 @@ urlpatterns = [
     path('password_reset/', auth.MyPasswordReset.as_view(), name="password_reset"),
     path('password_change_done/', auth.MyPasswordResetDone.as_view(), name="password_change_done"),
     path('password_reset_confirm/', auth.MyPasswordResetConfirm.as_view(), name="password_reset_confirm"),
+    path('user_room/<int:pk>', views.UserRoom.as_view(), name="user_room"),
 ]
