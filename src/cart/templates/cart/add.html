@@ -6,7 +6,7 @@
 {%block body%}
 <div>
     <h1>Добавить книгу</h1>
-    <form action="">
+    <form action="" method="POST">
         {% csrf_token %}
         {{form|crispy}}
         <input type="submit" class="btn btn-success" value="Добавить">

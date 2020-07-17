@@ -14,7 +14,7 @@ class Cart(models.Model):
     )
 
     def __str__(self):
-        return f'Cart #(self.pk)'
+        return f'Cart {self.pk}'
 
 class BookInCart(models.Model):
     cart = models.ForeignKey(
@@ -33,7 +33,11 @@ class BookInCart(models.Model):
     )
 
     def __str__(self):
-        return f'Book #(self.book.pk) In cart #(self.cart.pk)'
+        return f'Book {self.book.pk} In cart {self.cart.pk}'
+
+    def price(self):
+        price = self.quantity * self.book.price
+        return price
 
 class Meta:
     unique_together = (('cart', 'book'),)

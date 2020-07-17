@@ -1,17 +1,23 @@
 {% extends 'templates/base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
 
 {%block title%} list book {% endblock title%}
 {%block body%}
 <div>
     <h1>Корзина</h1>
-    <table>
-    {% for book_in_cart in object.book.all %}
+    <table class="table">
     <tr>
-        <td> {book_in_cart.book.name}</td>
+        <th>Название книги</th>
+        <th> Количество</th>
+        <th> Итого</th>
     </tr>
-    </table>
+    {% for product_in_cart in object.books.all %}
+    <tr>
+        <td> {{product_in_cart.book.name}}</td>
+        <td> {{product_in_cart.quantity}}</td>
+        <td> {{product_in_cart.price}}</td>
+    </tr>
     {% endfor %}
+    </table>
 </div> 
 {%endblock body%} 
