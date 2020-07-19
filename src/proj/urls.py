@@ -35,6 +35,7 @@ urlpatterns = [
     path('book/', include('book.urls', namespace='bookapp')),
     path('profiles/', include('profiles.urls', namespace='profiles')),
     path('checkout/', include('cart.urls', namespace='cart')),
+    path('order/', include('order.urls', namespace='order')),
     #path('login/', MyLogin.as_view(), name='login'),
     #path('logout/', MyLogout.as_view(), name='logout'),
 

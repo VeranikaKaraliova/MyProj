@@ -12,7 +12,7 @@
             <thead class="thead-dark">
             <tr id="id1">
                 <th>Название книги</th><th>Обложка книги</th><th>Автор</th><th>Жанр</th><th>Издательство</th>
-                <th>Год издания</th><th>Цена</th>>
+                <th>Год издания</th><th>Цена</th>
                 {% if user.is_superuser %} 
                 <th>Изменить/Удалить</th> {% elif user.is_staff %} <th>Изменить</th>{% endif %}<th>Добавить в корзину</th>
             </tr>

@@ -5,11 +5,10 @@
 {%block title%} add book {% endblock title%}
 {%block body%}
 <div>
-    <h1>Добавить книгу в корзину <br>"{{object}}"?</h1>
+    <h3>Вы действительно хотите удалить книгу <br>"{{object.book}}"?</h3>
     <form action="" method="post">
         {% csrf_token %}
-        {{form|crispy}}
-        <input type="submit" class="btn btn-success" value="Добавить">
+        <input type="submit" class="btn btn-success" value="Удалить">
     </form>
 </div> 
 {%endblock body%} 

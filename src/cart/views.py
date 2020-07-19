@@ -12,26 +12,26 @@ def get_cart(request):
         user = None
     if cart_pk is not None:
         cart_pk=int(cart_pk)
-    cart, created = models.Cart.objects.get_or_create(
+    cart, create = models.Cart.objects.get_or_create(
         pk = cart_pk,
         defaults={'user' : user,}
     )
     
-    return cart, created
+    return cart, create
 
 class AddBookInCart(UpdateView):
-    model = models.BookInCart
+    models = models.BookInCart
     template_name = 'cart/add.html'
     fields = ['quantity']
-    success_url = '/book/list-bookapp/'
-    def get_object(self):
+    success_url = reverse_lazy('bookapp:list')
+    def get_object(self, *args, **kwargs):
         #cart_pk = self.request.session.get('cart_id', 0)
         bookapp_pk = self.request.GET.get('bookapp_pk')
         bookapp = BookApp.objects.get(pk=int(bookapp_pk))
-        cart, created = get_cart(self.request)
-        if created:
+        cart, create = get_cart(self.request)
+        if create:
             self.request.session['cart_pk'] = cart.pk
-        obj, created = self.model.objects.get_or_create(
+        obj, create = self.models.objects.get_or_create(
             cart = cart,
             book = bookapp,
             defaults={}
@@ -43,7 +43,12 @@ class CartDatail(DetailView):
     template_name = 'cart/cart.html'
     def get_object(self):
         cart = get_cart(self.request)
-        cart, created  = get_cart(self.request)
-        if created :
+        cart, create  = get_cart(self.request)
+        if create :
             self.request.session['cart_pk'] = cart.pk
         return cart
+
+class BookInCartDelete(DeleteView):
+    model = models.BookInCart
+    template_name = "cart/delete.html"
+    success_url = reverse_lazy('cart:cart')

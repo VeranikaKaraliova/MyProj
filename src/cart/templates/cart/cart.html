@@ -17,10 +17,12 @@
         <td> {{product_in_cart.book.name}}</td>
         <td> {{product_in_cart.quantity}}</td>
         <td> {{product_in_cart.price}}</td>
-        <td><a href="{% url "cart:add" %}?bookapp_pk={{product_in_cart.book.pk}}">Редактировать</a> <a href="">Удалить</a></td>
+        <td><a href="{% url 'cart:add' %}?bookapp_pk={{product_in_cart.book.pk}}">Редактировать</a>
+            <a href="{% url 'cart:delete' product_in_cart.pk %} ">Удалить</a></td>
     </tr>
     {% endfor %}
     </table>
-    <h5>Итого:</h5> {{object.price}}
+    <h5>Итого:</h5> {{object.price}} <br><br>
+    <a href="{% url 'order:create' %}" class="btn btn-success">оформить заказ</a>
 </div> 
 {%endblock body%} 
