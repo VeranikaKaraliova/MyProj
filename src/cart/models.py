@@ -15,6 +15,12 @@ class Cart(models.Model):
 
     def __str__(self):
         return f'Cart {self.pk}'
+    @property
+    def price(self):
+        price = 0
+        for book in self.books.all():
+            price += book.price
+        return price
 
 class BookInCart(models.Model):
     cart = models.ForeignKey(
@@ -34,7 +40,7 @@ class BookInCart(models.Model):
 
     def __str__(self):
         return f'Book {self.book.pk} In cart {self.cart.pk}'
-
+    @property
     def price(self):
         price = self.quantity * self.book.price
         return price

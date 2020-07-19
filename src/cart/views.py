@@ -22,11 +22,11 @@ def get_cart(request):
 class AddBookInCart(UpdateView):
     model = models.BookInCart
     template_name = 'cart/add.html'
-    fields = ['quantity',]
+    fields = ['quantity']
     success_url = '/book/list-bookapp/'
     def get_object(self):
         #cart_pk = self.request.session.get('cart_id', 0)
-        bookapp_pk = self.request.GET.get('bookapp_pk', 0)
+        bookapp_pk = self.request.GET.get('bookapp_pk')
         bookapp = BookApp.objects.get(pk=int(bookapp_pk))
         cart, created = get_cart(self.request)
         if created:
