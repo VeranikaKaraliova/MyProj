@@ -36,7 +36,7 @@ class AddBookInCart(UpdateView):
             book = bookapp,
             defaults={}
         )
-        return cart
+        return obj
 
 class CartDatail(DetailView):
     model = models.Cart

@@ -6,6 +6,26 @@
 {%block body%}
 <div>
     <h3>Оформить заказ {{object}}</h3>
+
+    <table class="table">
+    <tr>
+        <th>Название книги</th>
+        <th> Количество</th>
+        <th> Итого</th>
+        <th>Редактировать/Удалить</th>
+    </tr>
+    {% for product_in_cart in object.cart.books.all %}
+    <tr>
+        <td> {{product_in_cart.book.name}}</td>
+        <td> {{product_in_cart.quantity}}</td>
+        <td> {{product_in_cart.price}}</td>
+        <td><a href="{% url 'cart:add' %}?bookapp_pk={{product_in_cart.book.pk}}">Изменить</a>
+            <a href="{% url 'cart:delete' product_in_cart.pk %} ">Удалить</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    <h5>Итого:</h5> {{object.price}} <br><br>
+
     <form action="" method="post">
         {% csrf_token %}
         {{form|crispy}}
