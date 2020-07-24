@@ -1,0 +1,16 @@
+{% extends 'templates/base.html' %}
+
+{%block title%} list authors {% endblock title%}
+{%block body%}
+<div>
+    
+    <h2>Книги автора {{authors.name}}</h3>
+        
+        <table   width="850" class="table">
+           
+                    {% for obj in authors.books.all %}
+                        <a href="{% url 'bookapp:detail' obj.pk %}">{{obj.name}}</a> <br>
+                    {% endfor %}
+        </table>
+</div>
+{%endblock body%} 

@@ -1,6 +1,6 @@
 
 from django.views.generic.base import TemplateView
-from django.views.generic import CreateView, UpdateView, ListView, DeleteView
+from django.views.generic import CreateView, UpdateView, ListView, DeleteView, DetailView
 from . models import Authors
 from . forms import CreateAuthorsForm
 from django.urls import reverse_lazy
@@ -28,5 +28,12 @@ class ListAuthors(ListView):
 class DeleteAuthors(DeleteView):
     model = Authors
     template_name = 'authors/delete-authors.html'
+    success_url = reverse_lazy('authors:list')
+    context_object_name = 'authors'
+
+class AuthorsBooks(DetailView):
+    model = Authors
+    template_name='authors/authors-books.html'
+    #queryset = Authors.objects.all()
     success_url = reverse_lazy('authors:list')
     context_object_name = 'authors'

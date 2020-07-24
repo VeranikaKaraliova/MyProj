@@ -1,0 +1,22 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block title%} Личный кабинет {% endblock title%}
+{%block body%}
+<form action="" method="post"> 
+    {% csrf_token %}
+
+    {% csrf_token %}
+    {{form|crispy}}
+    <input type="submit" class="btn btn-primary" value="Сохранить">
+
+    <!--<p>Username: {{user.username}}</p>
+    <p>Имя: {{user.first_name}}</p>
+    <p>Фамилия: {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Password: {{user.password}}</p>-->
+ </form>
+    
+    
+{%endblock body%} 

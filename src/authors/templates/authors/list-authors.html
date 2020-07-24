@@ -21,7 +21,8 @@
             </thead>
             {% for obj in authors %}
                 <tr>
-                    <td>{{obj.name}}</td>
+                    <td>
+                        <a href="{% url 'authors:books' obj.pk %}">{{obj.name}}</a></td>
                     <td>{{obj.description}}</td>
                     {% if user.is_superuser %}
                     <td><a href="{% url 'authors:update' obj.pk %}">Изменить</a><br>
@@ -31,6 +32,7 @@
                     {% endif %}
                 </tr>
             {% endfor %}  
+           
         </table>
 </div>
 {%endblock body%} 
