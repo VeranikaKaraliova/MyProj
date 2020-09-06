@@ -55,3 +55,7 @@ class HomePage(ListView):
     #    context = super().get_context_data(**kwargs)
     #    context['book'] = BookApp.obgects.all()
     #    return context
+
+class MyPage(ListView):
+    model = BookApp
+    template_name = "bookapp/my-page.html"

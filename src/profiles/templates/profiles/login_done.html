@@ -1,0 +1,11 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block title%} Личный кабинет {% endblock title%}
+{%block body%}
+<div class="container"> 
+    <h1>Добро пожаловать!</h1>
+    <p>Ваша учетная запись успешно сохранена. Теперь Вы можете <a href="{% url "profiles:login" %}">войти</a>.</p>
+</div>
+{%endblock body%} 

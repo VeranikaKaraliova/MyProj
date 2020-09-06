@@ -20,7 +20,7 @@ from testgenre.views import CreateGenre, UpdateGenre, ListGenre, DeleteGenre
 from django.conf import settings
 from django.conf.urls.static import static
 #from profiles.auth import MyLogin, MyLogout
-from book.views import HomePage
+from book.views import HomePage, MyPage
 #from testgenre import urls as testgenre_urls
 
 urlpatterns = [
@@ -36,9 +36,11 @@ urlpatterns = [
     path('profiles/', include('profiles.urls', namespace='profiles')),
     path('checkout/', include('cart.urls', namespace='cart')),
     path('order/', include('order.urls', namespace='order')),
+    path('my-page', MyPage.as_view(), name='my-page'),
     #path('login/', MyLogin.as_view(), name='login'),
     #path('logout/', MyLogout.as_view(), name='logout'),
 
     #path('profiles/', include('django.contrib.auth.urls')), # для авторизации 
-] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
+ 

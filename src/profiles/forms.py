@@ -1,37 +1,36 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Profiles
 
-class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-    phone = forms.CharField(required=True, max_length=12, help_text="в формате 375291112233")
+class CreateProfileForm(UserCreationForm):
+    username = forms.CharField(label='Имя пользователя', max_length=15)
+    password = forms.CharField(label='Пароль', max_length=15)
+    password1 = forms.CharField(label='Повторите пароль', max_length=15)
+    first_name = forms.CharField(label='Имя', max_length=50)
+    last_name = forms.CharField(label='Фамилия', max_length=50)
+    email = forms.EmailField(label='Email')
+    phone = forms.IntegerField(label='Номер телефона')
+    address1 = forms.CharField(label='Адрес доставки основной', max_length=500)
+    address2 = forms.CharField(label='Адрес доставки дополнительный', max_length=500)
+    image = forms.ImageField(label='Изображение')
+    
 
+
+class UpdateProfileForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ("username", "email", "password1", "password2", "phone")
-
-    def clean_password2(self):
-        password1 = self.cleaned_data.get("password1")
-        password2 = self.cleaned_data.get("password2")
-        if password1 and password2 and password1 != password2:
-            raise forms.ValidationError(
-                self.error_messages['password_mismatch'],
-                code='password_mismatch',
-            )
-        return password2
-
-    def save(self, commit=True):
-        user = super(RegisterForm, self).save(commit=False)
-        user.email = self.cleaned_data["email"]
-        user.image = self.cleaned_data["phone"]
-        if commit:
-            user.save()
-        return user
+        model = Profiles 
+        fields = (
+        'first_name',
+        'last_name',
+        'phone_number',
+        'email',
+        'image'
+        )
 
 
 
-
-#class RegisterForm(forms.Form):
+#class CreateProfileForm(forms.Form):
     #username = forms.RegexField(label='Username', max_length=30)
     #username = forms.CharField(label='Username', max_length=30)
     #first_name = forms.CharField(label='First name', required=False)
